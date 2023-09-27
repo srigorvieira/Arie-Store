@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.ariestore.models.Cliente;
 
-public class activity_cadastro_cliente extends AppCompatActivity {
+public class CadastroCliente extends AppCompatActivity {
 
     private Button btSalvar;
     private EditText edNmCliente;
@@ -29,7 +29,7 @@ public class activity_cadastro_cliente extends AppCompatActivity {
         tvClientesCadastrados = findViewById(R.id.tvClientesCadastrados);
 
         this.atualizarListaCliente();
-        
+
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,13 +42,14 @@ public class activity_cadastro_cliente extends AppCompatActivity {
     private void salvarCliente() {
 
         //VALIDA SE O CAMPO FOI PREENCHIDO OU NAO
-        if(edNmCliente.getText().toString().isEmpty()){
+        if (edNmCliente.getText().toString().isEmpty()) {
             edNmCliente.setError("Preencha o nome do cliente!");
             return;
         }
 
-        if(edCpfCliente.getText().toString().isEmpty()){
+        if (edCpfCliente.getText().toString().isEmpty()) {
             edCpfCliente.setError("Obrigatório informar o CPF!");
+            return;
         }
 
         //INSTANCIANDO OBJETO CLIENTE
@@ -59,17 +60,18 @@ public class activity_cadastro_cliente extends AppCompatActivity {
         ControllerCliente.getInstance().salvarCliente(cliente);
 
         //MSG PRA CONFIRMAR O CADASTRO DO CLIENTE
-        Toast.makeText(activity_cadastro_cliente.this,
+        Toast.makeText(CadastroCliente.this,
                 "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
 
+        this.finish();
     }
 
     private void atualizarListaCliente() {
         String texto = "";
         texto += tvClientesCadastrados.getText().toString();
 
-        for (Cliente cliente: ControllerCliente.getInstance().retornarClientes()){
-            texto += "Nome: "+Cliente.getNmCliente()+" - "+Cliente.getCpfCliente()+"\n";
+        for (Cliente cliente : ControllerCliente.getInstance().retornarClientes()) {
+            texto += "Nome: " + Cliente.getNmCliente() + " - " + Cliente.getCpfCliente() + "\n";
         }
         tvClientesCadastrados.setText(texto);
     }

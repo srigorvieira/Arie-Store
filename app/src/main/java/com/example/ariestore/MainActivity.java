@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btCadastroCliente = findViewById(R.id.btCadastroCliente);
-        btCadastroItem = findViewById(R.id.btCadastroCliente);
+        btCadastroItem = findViewById(R.id.btCadastroItem);
         btLancaPedido = findViewById(R.id.btLancaPedido);
 
         //AQUI VAI ABRIR AS TELAS
@@ -50,17 +50,17 @@ public class MainActivity extends AppCompatActivity {
 
     //**INTENT** SOLICITA CHAMA O OUTRO COMPONENTE
     private void openLancaPedido() {
-        Intent intent = new Intent(this, activity_fechar_pedido.class);
+        Intent intent = new Intent(this, FecharPedido.class);
         startActivity(intent);
     }
 
     private void openCadastroItem() {
-        Intent intent = new Intent(this, activity_cadastro_item.class);
+        Intent intent = new Intent(this, CadastroItem.class);
         startActivity(intent);
     }
 
     private void openCadastroCliente() {
-        Intent intent = new Intent(this, activity_cadastro_cliente.class);
+        Intent intent = new Intent(this, CadastroCliente.class);
         startActivity(intent);
     }
 }

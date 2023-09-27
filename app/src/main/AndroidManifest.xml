@@ -13,13 +13,13 @@
         android:theme="@style/Theme.ArieStore"
         tools:targetApi="31">
         <activity
-            android:name=".activity_fechar_pedido"
+            android:name=".FecharPedido"
             android:exported="false" />
         <activity
-            android:name=".activity_cadastro_item"
+            android:name=".CadastroItem"
             android:exported="false" />
         <activity
-            android:name=".activity_cadastro_cliente"
+            android:name=".CadastroCliente"
             android:exported="false" />
         <activity
             android:name=".activity_teste"
