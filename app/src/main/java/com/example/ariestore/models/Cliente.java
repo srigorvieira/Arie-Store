@@ -2,8 +2,8 @@ package com.example.ariestore.models;
 
 public class Cliente {
 
-    private String nmCliente;
-    private String cpfCliente;
+    private static String nmCliente;
+    private static String cpfCliente;
 
     public Cliente(){}
 
@@ -12,7 +12,7 @@ public class Cliente {
         this.cpfCliente = cpfCliente;
     }
 
-    public String getNmCliente() {
+    public static String getNmCliente() {
         return nmCliente;
     }
 
@@ -20,7 +20,7 @@ public class Cliente {
         this.nmCliente = nmCliente;
     }
 
-    public String getCpfCliente() {
+    public static String getCpfCliente() {
         return cpfCliente;
     }
 

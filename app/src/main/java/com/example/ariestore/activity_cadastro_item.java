@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.ariestore.models.Item;
+
 
 public class activity_cadastro_item extends AppCompatActivity {
 
@@ -28,7 +30,18 @@ public class activity_cadastro_item extends AppCompatActivity {
         edVlrItem = findViewById(R.id.edVlrItem);
         tvItensCadastrados = findViewById(R.id.tvItensCadastrados);
 
-
-
     }
+
+    public void atualizarItem(){
+        String texto = "";
+        texto += tvItensCadastrados.getText().toString();
+
+        for (Item item: ControllerItem.getInstance().retornarItem()){
+            texto += "Código do item: "+item.getCodItem()+" - "+"\n"
+                    +"Descrição: "+item.getDescItem()+" - "+"\n"
+                    +"Valor UND: "+item.getVlrItem()+" - "+"\n";
+        }
+        tvItensCadastrados.setText(texto);
+    }
+
 }
