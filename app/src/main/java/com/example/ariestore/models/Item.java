@@ -2,6 +2,7 @@ package com.example.ariestore.models;
 
 public class Item {
 
+    public static int getVlrItem;
     private int codItem;
     private String descItem;
     private double vlrItem;

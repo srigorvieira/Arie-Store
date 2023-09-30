@@ -28,7 +28,6 @@ public class CadastroCliente extends AppCompatActivity {
         edCpfCliente = findViewById(R.id.edCpfCliente);
         tvClientesCadastrados = findViewById(R.id.tvClientesCadastrados);
 
-        this.atualizarListaCliente();
 
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +36,11 @@ public class CadastroCliente extends AppCompatActivity {
             }
         });
 
+        atualizarListaClientes();
+
     }
 
+    //DAQUI PRA BAIXO É SÓ METODO
     private void salvarCliente() {
 
         //VALIDA SE O CAMPO FOI PREENCHIDO OU NAO
@@ -66,13 +68,14 @@ public class CadastroCliente extends AppCompatActivity {
         this.finish();
     }
 
-    private void atualizarListaCliente() {
+    private void atualizarListaClientes() {
         String texto = "";
-        texto += tvClientesCadastrados.getText().toString();
-
         for (Cliente cliente : ControllerCliente.getInstance().retornarClientes()) {
-            texto += "Nome: " + Cliente.getNmCliente() + " - " + Cliente.getCpfCliente() + "\n";
+            texto += "CPF: " + cliente.getCpfCliente() + "\n" +
+                    "Nome: " + cliente.getNmCliente() + "\n" + "\n";
         }
+
         tvClientesCadastrados.setText(texto);
     }
+
 }

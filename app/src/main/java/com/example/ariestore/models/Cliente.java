@@ -12,7 +12,7 @@ public class Cliente {
         this.cpfCliente = cpfCliente;
     }
 
-    public static String getNmCliente() {
+    public  String getNmCliente() {
         return nmCliente;
     }
 
@@ -20,7 +20,7 @@ public class Cliente {
         this.nmCliente = nmCliente;
     }
 
-    public static String getCpfCliente() {
+    public String getCpfCliente() {
         return cpfCliente;
     }
 

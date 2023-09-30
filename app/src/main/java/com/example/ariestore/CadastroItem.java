@@ -81,7 +81,7 @@ public class CadastroItem extends AppCompatActivity {
         for (Item item: ControllerItem.getInstance().retornarItem()){
             texto += "Código do item: "+item.getCodItem()+"\n"
                     +"Descrição: "+item.getDescItem()+"\n"
-                    +"Valor UND: "+item.getVlrItem()+"\n"+"\n";
+                    +"Valor unitário R$: "+item.getVlrItem()+"\n"+"\n";
         }
         tvItensCadastrados.setText(texto);
     }

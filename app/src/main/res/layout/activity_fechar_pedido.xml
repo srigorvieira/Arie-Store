@@ -7,4 +7,113 @@
     android:orientation="vertical"
     tools:context=".FecharPedido">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="FINALIZAR PEDIDO"
+        android:textSize="25sp" />
+
+    <!--Seleciona o cliente-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione um cliente:" />
+
+    <Spinner
+        android:id="@+id/spCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp" />
+
+    <TextView
+        android:id="@+id/tvErroCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="O cliente deve ser selecionado!"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone" />
+
+    <!--Seleciona o item-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione o item:" />
+
+    <Spinner
+        android:id="@+id/spItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp" />
+
+    <TextView
+        android:id="@+id/tvErroItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="O item deve ser selecionado!"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone" />
+
+    <!-- Campos para quantidade e valor unitário -->
+
+    <EditText
+        android:id="@+id/edQuantidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantidade" />
+
+
+    <!-- Botão para adicionar o item no pedido -->
+    <Button
+        android:id="@+id/btAdicionarItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Adicionar Item" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPedidosRealizados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="a Prazo"
+                    android:id="@+id/rbPrazo"/>
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="a Vista"
+                    android:id="@+id/rbAvista"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>
