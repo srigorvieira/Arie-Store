@@ -74,46 +74,70 @@
         android:layout_gravity="center"
         android:text="Adicionar Item" />
 
+    <RadioGroup
+        android:id="@+id/rgTipoPagto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbInstallment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="a Prazo" />
+
+        <RadioButton
+            android:id="@+id/rbAvista"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="a Vista"
+            android:checked="true"/>
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edInstallmentCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/quantidade_de_parcelas"
+        android:inputType="number"
+        android:visibility="gone"
+        android:autofillHints="" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvPedidosRealizados"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20sp"
                 android:layout_margin="10dp"
-                android:textSize="20sp" />
+                android:id="@+id/tvListaItem"/>
 
-            <RadioGroup
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:id="@+id/tvListaCliente"/>
 
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="a Prazo"
-                    android:id="@+id/rbPrazo"/>
-
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="a Vista"
-                    android:id="@+id/rbAvista"/>
-
-            </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:id="@+id/tvPedidoCadastrados"/>
 
         </LinearLayout>
-
     </ScrollView>
+
 
 </LinearLayout>

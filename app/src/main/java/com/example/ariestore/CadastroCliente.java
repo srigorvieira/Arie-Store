@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ariestore.Controllers.ControllerCliente;
 import com.example.ariestore.models.Cliente;
 
 public class CadastroCliente extends AppCompatActivity {

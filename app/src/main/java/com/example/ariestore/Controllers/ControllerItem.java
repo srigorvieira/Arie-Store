@@ -1,4 +1,4 @@
-package com.example.ariestore;
+package com.example.ariestore.Controllers;
 
 import com.example.ariestore.models.Item;
 

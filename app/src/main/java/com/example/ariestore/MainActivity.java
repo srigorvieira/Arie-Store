@@ -43,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 openLancaPedido();
             }
         });
-
-
-
     }
 
     //**INTENT** SOLICITA CHAMA O OUTRO COMPONENTE
