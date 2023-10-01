@@ -36,8 +36,6 @@ public class FecharPedido extends AppCompatActivity {
     private Spinner spCliente;
     private Spinner spItem;
     private TextView tvPedidosCadastrados;
-    private TextView tvListaItem;
-    private TextView tvListaCliente;
     private int posicaoSelecionadaCliente = 0;
     private int posicaoSelecionadaItem = 0;
 
@@ -52,10 +50,13 @@ public class FecharPedido extends AppCompatActivity {
         EditText edInstallmentCount = findViewById(R.id.edInstallmentCount);
 
         tvPedidosCadastrados = findViewById(R.id.tvPedidoCadastrados);
-        tvListaCliente = findViewById(R.id.tvListaCliente);
-        tvListaItem = findViewById(R.id.tvListaItem);
+        TextView tvListaCliente = findViewById(R.id.tvListaCliente);
+        TextView tvListaItem = findViewById(R.id.tvListaItem);
 
         RadioGroup rgTipoPagto = findViewById(R.id.rgTipoPagto);
+
+        spCliente = findViewById(R.id.spCliente);
+        spItem = findViewById(R.id.spItem);
 
         spCliente.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -71,6 +72,7 @@ public class FecharPedido extends AppCompatActivity {
 
             }
         });
+
         spItem.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int posicao, long l) {
@@ -177,9 +179,9 @@ public class FecharPedido extends AppCompatActivity {
         for (Pedido pedido : ControllerPedido.getInstance().retornarPedido()) {
             String pagto = pedido.isNoDinheiro() ? "A vista" : "A prazo - " + pedido.getQtdParcelas() +
                     "/" + vlrParcela(pedido.getVlrTotal(), pedido.getQtdParcelas());
-            texto += "Item: " + pedido.getItem() + "\n" +
+            texto += "Item: " + pedido.getItem().getDescItem() + "\n" +
                     "Quantidade " + pedido.getQtdItem() + "\n" +
-                    "Cliente: " + pedido.getCliente() + "\n" +
+                    "Cliente: " + pedido.getCliente().getNmCliente() + "\n" +
                     "Pagamento: " + pagto + "\n" +
                     "Total R$: " + pedido.getVlrTotal() + "\n" + "\n";
         }
